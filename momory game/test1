@@ -1,0 +1,35 @@
+gamedata.txt = {
+    how many is 1  from easy
+    how many is 1 from hard
+    how many is 1 from midium
+    the amout of trys you get
+    the amout of life you get 
+}
+
+make a function that check if the user get all correct
+
+while loop: 
+    seletion of easy midium or hard
+    assingn keyboard to 1 or 0
+    1 is correct
+    show the answer for couple seccond
+    cover the grid with the keyboard pattern
+    6  by 3 grid 
+    if you hit q the first one appers :
+        the grid on q appers
+
+    do that with 18 keys
+
+    if the grid that the user hit is 1:
+        show the correct one that the user hit
+    if the grid that thee user hit is 0:
+        minus one from the data 
+    if all the one is founded :
+        print("you won")
+        print("[Y] [N]")
+        retry = ("do you want to retry >> ")
+        if retry == Y:
+            pass
+        else: 
+            quit()
+        
