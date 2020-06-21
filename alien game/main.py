@@ -2,53 +2,79 @@ from time import sleep
 from os import system
 import keyboard
 
+
+staring_pos = 8
+
+
 def sl():
     sleep(1)
     system("cls")
-staring_pos = 8
 # row = 15
 # col = 21
-def printall(player_pos): 
+
+
+def ma(player_pos):
+    global map1 
     map1 = [" "] * 15
 
+    global map2
     map2 = [" "] * 15
     
+    global map3
     map3 = [" "] * 15
 
+    global map4
     map4 = [" "] * 15
 
+    global map5
     map5 = [" "] * 15
 
+    global map6
     map6 = [" "] * 15
 
+    global map7
     map7 = [" "] * 15
 
+    global map8
     map8 = [" "] * 15
 
+    global map9
     map9 = [" "] * 15
 
+    global map10
     map10 = [" "] * 15
 
+    global map11
     map11 = [" "] * 15
 
+    global map12
     map12 = [" "] * 15
 
+    global map13
     map13 = [" "] * 15
 
+    global map14
     map14 = [" "] * 15
 
+    global map15
     map15 = [" "] * 15
 
+    global map16
     map16 = [" "] * 15
 
+    global map17
     map17 = [" "] * 15
 
+    global map18
     map18 = [" "] * 15
 
+    global map19
     map19 = [" "] * 15
 
+    global map20
     map20 = [" "] * 15
-
+    
+    global player
     player = [" "] * 15
 
     if player_pos == 1:
@@ -81,7 +107,9 @@ def printall(player_pos):
         player[13] = "#"
     if player_pos == 15:
         player[14] = "#"
+    return (player, player_pos, map1, map2, map3, map4, map5, map6, map7, map8, map9, map10, map11, map12, map13, map14, map15, map16, map17, map17, map18, map19, map20)
 
+def printall():  
     print(map1)
     print(map2)
     print(map3)
@@ -103,9 +131,10 @@ def printall(player_pos):
     print(map19)
     print(map20)
     print(player)
-    return (player, current_pos, player_pos)
+
 
 def main():
+    current_pos = 8
     system("cls")
     print("THIS IS AN ALIAN GAME")
     sleep(2) 
@@ -117,15 +146,15 @@ def main():
         print("HOW MANY ALIAN DO YOU WANT *IT HAVE TO BE MORE THAN 5 LESS THAN 20")
         amo = input(">>> ")
         amo = int(amo)
-        if type(amo) == str:
-            print("SORRY THERE IS AN ERROR PLESE RESTART : AMO SHOULD BE A INT RATHER THAN AN STR")
-            sleep(4)
-            quit()
-        if amo < 5 and amo < 20:
+
+        if amo > 5 and amo <= 20:
             break
         else:
-            print("RETRY *THE NUMBER HAVE TO BE MORE THAN 5")
             system("cls")
+            print("RETRY *THE NUMBER HAVE TO BE MORE THAN 5 AND LESS THAN 20")
+            sleep(4)
+            system("cls")
+            
     system("cls")
     print("CONTROLL: A = LEFT D = RIGHT")
     sleep(5)
@@ -136,29 +165,36 @@ def main():
 
     # the first frame
 
-    printall(staring_pos)
+    ma(current_pos)
+    printall()
     sl()
     # the first frame 
-    while True: 
-        # main code 
-        if keyboard.is_pressed("a") or keyboard.is_pressed("A"): 
 
-            current_pos = staring_pos - 1
-            printall(current_pos)
-            sl()
-        elif keyboard.is_pressed("d") or keyboard.is_pressed("D"):
-            current_pos = staring_pos + 1
-            printall(current_pos)
-            sl()
-        else:
-            while True:
-                printall(current_pos)
-                sl()
-                if keyboard.is_pressed("a") or keyboard.is_pressed("A"):
-                    break
-                elif keyboard.is_pressed("d") or keyboard.is_pressed("D"):
-                    break
+    while True:
         # main code
- 
+        ma(current_pos)
+        printall()
+        sl()
+        if keyboard.is_pressed("a") or keyboard.is_pressed("A"):
+            if current_pos == 1:
+                current_pos = current_pos + 1
+            current_pos = current_pos - 1   
+         
+        if keyboard.is_pressed("d") or keyboard.is_pressed("D"):
+            if current_pos == 15:
+                current_pos = current_pos - 1
+            current_pos = current_pos + 1 
+        
+        if keyboard.is_pressed(
+
+        # main code close
+
+        # extra idea
+        # if current pos = 1:
+            # current pos = 1
+        # if current pos = 15:
+            # current pos = 15
+
+
 if __name__ == "__main__":
     main()
