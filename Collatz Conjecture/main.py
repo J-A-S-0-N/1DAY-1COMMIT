@@ -1,6 +1,7 @@
 #Pick any number. If that number is even, divide it by 2. If it's odd, multiply it by 
 # 3 and add 1. Now repeat the process with your new number. If you keep going, you'll 
-# eventually end up at 1. Every time.
+# eventually end up at 1. Every time. what this do is this checks if there isnt a number
+# that ends up with 1
 
 def main():
     num = 1
